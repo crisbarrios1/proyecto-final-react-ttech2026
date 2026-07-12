@@ -1,0 +1,21 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.logo-container{
+    display: flex;
+    font-size: 2rem;
+}
+
+.logo-container img{
+    width: 8rem;
+}
+
+.logo-container a {
+    display: flex;
+    align-items: center;
+}
+

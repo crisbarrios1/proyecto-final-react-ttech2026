@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Teclado Mecánico RGB",
+    "price": 89.99,
+    "description": "Switches Blue, Retroiluminado, Layout ISO-ES",
+    "image": "https://images.pexels.com/photos/13012666/pexels-photo-13012666.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Ratón Inalámbrico Ergonómico",
+    "price": 45.50,
+    "description": "Batería recargable, 16000 DPI, Conexión 2.4GHz",
+    "image": "https://images.pexels.com/photos/9058886/pexels-photo-9058886.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Monitor Gamer 27\" 144Hz",
+    "price": 229.99,
+    "description": "Panel IPS, 1ms de respuesta, FreeSync",
+    "image": "https://images.pexels.com/photos/5552789/pexels-photo-5552789.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Auriculares con Cancelación de Ruido",
+    "price": 120.00,
+    "description": "Bluetooth 5.2, Autonomía 30h, Micrófono integrado",
+    "image": "https://images.pexels.com/photos/3394651/pexels-photo-3394651.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Joystick de Playstation 4",
+    "price": 19.99,
+    "description": "Joystick original, compatible con Playstation 3 y 4",
+    "image": "https://images.pexels.com/photos/16070479/pexels-photo-16070479.jpeg"
+  }
+]
