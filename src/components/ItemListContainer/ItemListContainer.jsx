@@ -1,23 +1,28 @@
 import { useEffect, useState } from "react";
 import { ItemList } from '../ItemList/ItemList'
+import { useParams } from "react-router-dom";
+import { getProducts } from "../../services/productsService"
 
 export const ItemListContainer = () =>{
-    const [products, setProducts] = useState([])
-    
+
+    const { category } = useParams()
+    const [products, setProducts] = useState([])    
     const [loading, setLoading] = useState(true)
 
     useEffect (() =>{
-        fetch("/data/products.json")
-        .then((res) => res.json())
-        .then((data) => setProducts(data))
-        .catch((err) => console.log(err))
-        .finally(() =>{
-            setLoading(false)
-        })
+        setLoading(true)
+
+        getProducts()            
+            .then((data) => setProducts(data))            
+            .catch((err) => console.log("Hubo un error:", err))
+            .finally(() => setLoading(false))
+        
     }, [])
 
     if(loading) return <p>Cargando...</p>
-    return(<section>
-        <ItemList products={products}/>
-    </section>) 
+        return(
+        <section>
+            <ItemList products={products}/>
+        </section>
+    ) 
 }
