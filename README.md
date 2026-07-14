@@ -1,16 +1,41 @@
-# React + Vite
+# Proyecto Final - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## 📦 Import-tech
 
-Currently, two official plugins are available:
+Tienda online de productos tecnológicos desarrollada con React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** (Vite)
+- **React Router Dom** (navegación)
+- **Firebase Firestore** (base de datos)
+- **ImgBB** (alojamiento de imágenes)
+- **CSS** (estilos personalizados)
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 📋 Funcionalidades
+
+### 🔹 Productos
+- Listado de productos desde Firebase
+- Detalle de cada producto
+- Imágenes alojadas en ImgBB
+
+### 🛒 Carrito de compras
+- Agregar productos al carrito
+- Eliminar productos del carrito
+- Ver total a pagar
+- Finalizar compra
+
+### 🔐 Panel de administración
+- Acceso con contraseña: `admin123`
+- Agregar nuevos productos
+- Editar productos existentes
+- Eliminar productos
+- Subir imágenes para cada producto
+
+---
+
+## 📁 Estructura del proyecto
