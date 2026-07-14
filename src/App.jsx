@@ -8,6 +8,8 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { CartView } from './components/Cart/CartView'
 import { ProductSuccess } from './components/adminComponent/ProductSuccess'
 import { ProductFormContainer } from './components/adminComponent/ProductFormContainer'
+import { AdminProductList } from './components/adminComponent/AdminProductList';
+
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
           <Route path="/carrito" element={<CartView />} />
           <Route path="/admin" element={<ProductFormContainer />}/>      
           <Route path="/success/:id" element={<ProductSuccess />}/>   
+          <Route path="/admin/list" element={<AdminProductList />} />
+          <Route path="/admin/edit/:id" element={<ProductFormContainer />} />
         </Routes>   
       </main>
       <Footer />

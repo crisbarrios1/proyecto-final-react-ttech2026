@@ -7,13 +7,15 @@ export const ProductFormUI = ({
     onChange,
     onFileChange,
     onSubmit,
+    isEditing,
+    onDelete,
 }) => {
     return (
-        <section className="product-form-container">  
-            <h2>Agregar nuevo producto</h2>
+        <section className="product-form-container">
+            <h2>{isEditing ? "Editar producto" : "Agregar nuevo producto"}</h2>
             
-            <form className="product-form" onSubmit={onSubmit}>  
-                <div className="product-form-group">  
+            <form className="product-form" onSubmit={onSubmit}>
+                <div className="product-form-group">
                     <label>Nombre: </label>
                     <input
                         type="text"
@@ -24,7 +26,7 @@ export const ProductFormUI = ({
                     {errors.name && <p className="error">{errors.name}</p>}
                 </div>
 
-                <div className="product-form-group">  
+                <div className="product-form-group">
                     <label>Precio: </label>
                     <input
                         type="number"
@@ -37,7 +39,7 @@ export const ProductFormUI = ({
                     {errors.price && <p className="error">{errors.price}</p>}
                 </div>
                 
-                <div className="product-form-group"> 
+                <div className="product-form-group">
                     <label>Categoría: </label>
                     <input
                         type="text"
@@ -48,7 +50,7 @@ export const ProductFormUI = ({
                     {errors.category && <p className="error">{errors.category}</p>}
                 </div>
                 
-                <div className="product-form-group"> 
+                <div className="product-form-group">
                     <label>Descripción: </label>
                     <textarea
                         name="description"
@@ -58,21 +60,36 @@ export const ProductFormUI = ({
                     {errors.description && <p className="error">{errors.description}</p>}
                 </div>
 
-                <div className="product-form-group">  
+                <div className="product-form-group">
                     <label>Imagen:</label>
                     <input 
                         type="file" 
                         accept="image/*" 
                         onChange={onFileChange} 
                     />
+                    {product.image && !file && (
+                        <p style={{ color: '#888', fontSize: '14px', marginTop: '5px' }}>
+                            Imagen actual: {product.image.substring(0, 30)}...
+                        </p>
+                    )}
                     {errors.file && <p className="error">{errors.file}</p>}
                 </div>
 
-                <button className="product-form-submit" type="submit" disabled={loading}>  
-                    {loading ? "Guardando..." : "Guardar"}
+                <button className="product-form-submit" type="submit" disabled={loading}>
+                    {loading ? "Guardando..." : isEditing ? "Actualizar" : "Guardar"}
                 </button>
 
-                {errors.general && <p className="product-form-error">{errors.general}</p>}  
+                {isEditing && (
+                    <button 
+                        type="button"
+                        className="product-form-delete"
+                        onClick={onDelete}
+                    >
+                        🗑️ Eliminar producto
+                    </button>
+                )}
+
+                {errors.general && <p className="product-form-error">{errors.general}</p>}
             </form>
         </section>
     );

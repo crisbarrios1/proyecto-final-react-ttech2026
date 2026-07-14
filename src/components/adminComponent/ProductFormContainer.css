@@ -82,3 +82,23 @@
 .admin-login-form button:hover {
     background: #2563eb;
 }
+
+.admin-list-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-list {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #6b7280;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-list:hover {
+    background: #4b5563;
+}
