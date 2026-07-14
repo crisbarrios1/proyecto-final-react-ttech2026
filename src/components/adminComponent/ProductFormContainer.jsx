@@ -1,17 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./ProductFormContainer.css";
-import { ProductFormUI} from "./ProductFormUI"
+import { ProductFormUI } from "./ProductFormUI"
 import { validateProduct } from "../../utils/validateProduct"
 import { uploadImage } from "../../services/uploadImage"
 import { createProduct } from "../../services/productsService";
-
 
 export const ProductFormContainer = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({});
     const [file, setFile] = useState(null);
+    const [password, setPassword] = useState("");
+    const [isAuthorized, setIsAuthorized] = useState(false);
 
     const [product, setProduct] = useState({
         name: "",
@@ -19,6 +20,17 @@ export const ProductFormContainer = () => {
         category: "",
         description: "",
     });
+
+    const handlePasswordSubmit = (e) => {
+        e.preventDefault();
+        if (password === "admin123") {   // contraseña para el panel de admin
+            setIsAuthorized(true);
+            setPassword("");
+        } else {
+            alert("Contraseña incorrecta");
+            setPassword("");
+        }
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target 
@@ -48,12 +60,11 @@ export const ProductFormContainer = () => {
             const productData = {
             ...product,
             price: Number(product.price),
-            image: imageUrl,//ImgBB devuelve una url de la imágen
+            image: imageUrl,
             }
 
             const id = await createProduct(productData)
 
-            //Limpiadmos los estados
             setProduct({name: "", price:"", category:"", description:""})
             setFile(null);
             navigate(`/success/${id}`, { replace: true });
@@ -64,6 +75,27 @@ export const ProductFormContainer = () => {
             setLoading(false)
         }
 
+    }
+
+    if (!isAuthorized) {
+        return (
+            <section className="admin-login">
+                <h2>Acceso al panel de administración</h2>
+                <p>Ingresa la contraseña para continuar</p>
+                <form onSubmit={handlePasswordSubmit} className="admin-login-form">
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Contraseña"
+                        required
+                    />
+                    <button type="submit" className="btn primary">
+                        Ingresar
+                    </button>
+                </form>
+            </section>
+        )
     }
 
     return(

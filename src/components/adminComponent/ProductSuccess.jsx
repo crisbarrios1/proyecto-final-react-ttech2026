@@ -8,12 +8,12 @@ export const ProductSuccess = () => {
         <section className="success-page">
             <div className="success-icon">✅</div>
             <h2>Producto cargado con éxito</h2>
-            <p>Id de producto: </p>
+            <p>Id de producto: {id}</p>
             <p>Puede cargar otro haciendo click en el botón</p>
 
-            <Link className="btn bg-primary primary" to="/admin" replace />
+            <Link className="btn bg-primary primary" to="/admin" replace >
                 Agregar otro producto
-            < Link/>
+            </Link>
 
         </section>
      )

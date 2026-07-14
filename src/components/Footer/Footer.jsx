@@ -8,11 +8,10 @@ export const Footer = () => {
             <nav>
                 <ul className="nav-list">
                     <li>
-                        <Link to={"www.whatsapp.com"} target={"_blank"}>Whatsapp</Link>
+                        <Link to={"https://www.whatsapp.com"} target={"_blank"}>Whatsapp</Link>
                     </li>
                     <li>
-                        <Link to={"www.instagram.com"} target={"_blank"}>Instagram</Link>
-                    </li>
+                        <Link to={"https://www.instagram.com"} target={"_blank"}>Instagram</Link>                    </li>
                 </ul>
             </nav>
         </footer>

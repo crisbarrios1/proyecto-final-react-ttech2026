@@ -1,3 +1,5 @@
+import "./ProductFormUI.css"
+
 export const ProductFormUI = ({
     product,
     errors,
@@ -7,11 +9,11 @@ export const ProductFormUI = ({
     onSubmit,
 }) => {
     return (
-        <section>
-            <form className="product-form" onSubmit={onSubmit}>
-                <h2>Agregar nuevo producto</h2>
-                
-                <div>
+        <section className="product-form-container">  
+            <h2>Agregar nuevo producto</h2>
+            
+            <form className="product-form" onSubmit={onSubmit}>  
+                <div className="product-form-group">  
                     <label>Nombre: </label>
                     <input
                         type="text"
@@ -22,7 +24,7 @@ export const ProductFormUI = ({
                     {errors.name && <p className="error">{errors.name}</p>}
                 </div>
 
-                <div>
+                <div className="product-form-group">  
                     <label>Precio: </label>
                     <input
                         type="number"
@@ -35,7 +37,7 @@ export const ProductFormUI = ({
                     {errors.price && <p className="error">{errors.price}</p>}
                 </div>
                 
-                <div>
+                <div className="product-form-group"> 
                     <label>Categoría: </label>
                     <input
                         type="text"
@@ -46,7 +48,7 @@ export const ProductFormUI = ({
                     {errors.category && <p className="error">{errors.category}</p>}
                 </div>
                 
-                <div>
+                <div className="product-form-group"> 
                     <label>Descripción: </label>
                     <textarea
                         name="description"
@@ -56,7 +58,7 @@ export const ProductFormUI = ({
                     {errors.description && <p className="error">{errors.description}</p>}
                 </div>
 
-                <div>
+                <div className="product-form-group">  
                     <label>Imagen:</label>
                     <input 
                         type="file" 
@@ -66,11 +68,11 @@ export const ProductFormUI = ({
                     {errors.file && <p className="error">{errors.file}</p>}
                 </div>
 
-                <button className="btn" type="submit" disabled={loading}>
+                <button className="product-form-submit" type="submit" disabled={loading}>  
                     {loading ? "Guardando..." : "Guardar"}
                 </button>
 
-                {errors.general && <p className="error">{errors.general}</p>}
+                {errors.general && <p className="product-form-error">{errors.general}</p>}  
             </form>
         </section>
     );

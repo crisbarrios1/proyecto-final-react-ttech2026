@@ -1,12 +1,13 @@
 import "./Item.css"
 
 export const Item = ({ name, description, price, image, children }) =>{
+    console.log("URL de la imagen:", image)
     return(
         <article className="card">
-            <img src={image} alt={`Foto de ${name}`} />
+            {image && <img src={image} alt={name} />}
             <h2>{name}</h2>
             <h3>{description}</h3>
-            <p className="price-list">${price}</p>
+            {price > 0 && <p className="price-list">${price}</p>}
             {children}
         </article>
     )

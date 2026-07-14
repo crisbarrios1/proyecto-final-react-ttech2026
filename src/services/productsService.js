@@ -46,7 +46,7 @@ export const getProductById = async (id) => {
 export const createProduct = async (productData) => {
     try{
     //Tan facil como usar la funcion addDoc y pasarle la coleccion y el doc a agregar
-        const docRef = await addDoc (productsRef, productData);
+        const docRef = await addDoc (productRef, productData);
 
         return docRef.id; // opcional, por si quieren usar el id para algo
     } catch (error) {

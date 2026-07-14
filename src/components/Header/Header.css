@@ -19,3 +19,35 @@ header{
     align-items: center;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #3b82f6;
+}
+
+.admin-btn {
+    background: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
+    margin-left: 20px;
+}
+
+.admin-btn:hover {
+    background: #2563eb;
+}

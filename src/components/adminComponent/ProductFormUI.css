@@ -1,0 +1,121 @@
+.product-form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.product-form-container h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.product-form-group label {
+    color: #eaeaea;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.product-form-group input,
+.product-form-group textarea {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #2a2a2a;
+    color: white;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: inherit;
+}
+
+.product-form-group input:focus,
+.product-form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.product-form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.product-form-group input[type="file"] {
+    padding: 12px;
+    cursor: pointer;
+    background: #1a1a1a;
+}
+
+.product-form-group input[type="file"]::file-selector-button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 12px;
+    transition: background 0.3s;
+}
+
+.product-form-group input[type="file"]::file-selector-button:hover {
+    background: #2563eb;
+}
+
+.product-form-group .error {
+    color: #ef4444;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.product-form-submit {
+    padding: 14px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.product-form-submit:hover:not(:disabled) {
+    background: #2563eb;
+}
+
+.product-form-submit:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.product-form-submit:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.product-form-error {
+    color: #ef4444;
+    text-align: center;
+    padding: 10px;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: 8px;
+    border: 1px solid #ef4444;
+}
