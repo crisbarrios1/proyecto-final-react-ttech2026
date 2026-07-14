@@ -1,5 +1,5 @@
 const IMGBB_API_KEY = "57b710fc5040dbe5d45f374b53fd682d" //key para subir imágenes a IMGBB
-const ENDPOINT = "http://api.imgbb.com/1/upload"
+const ENDPOINT = "https://api.imgbb.com/1/upload"
 
 export const uploadImage = async (file) => {
     const formData = new FormData();
